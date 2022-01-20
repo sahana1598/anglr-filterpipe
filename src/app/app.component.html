@@ -1,0 +1,28 @@
+ <div class="row justify-content-center">
+   <div class="col-md-8">
+    <div class="mb-3">
+      <label for="search" class="form-label">Search Product</label>
+      <input type="email" class="form-control" id="search" placeholder="Search" [(ngModel)]="nameSearch">
+    </div>
+   </div>
+   <div class="col-md-6">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">productName</th>
+          <th scope="col">price</th>
+          <th scope="col">availiability</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of productArr | fltrpipe:nameSearch">
+          <th scope="row">{{product.sno}}</th>
+          <td>{{product.name}}</td>
+          <td>{{product.price}}</td>
+          <td>{{product.availability}}</td>
+        </tr>
+      </tbody>
+    </table>
+   </div>
+ </div>
